@@ -1,0 +1,42 @@
+---
+title: "Homework 0"
+format: html
+author: Laura Chen
+---
+## Solving the equation
+```{r}
+a <- 1 
+b <- 3 
+c <- 2
+det <- b^2 - 4*a*c
+
+# considering 3 cases: 2 roots, 1 root, and no roots
+if (det > 0) {
+  solution_1 <- (-b + sqrt(det))/(2*a)
+  solution_2 <- (-b - sqrt(det))/(2*a)
+  cat("There are two real number solutions, which are ", solution_1 ,"and", solution_2,".")
+}
+
+if (det < 0) {
+  solution_1 <- NA
+  solution_2 <- NA
+  cat("There are no real number solutions to this equation.")
+
+}
+if (det == 0) {
+  solution_1 <- (-b + sqrt(det))/(2*a)
+  solution_2 <- NA 
+  cat("There is one real number solution, which is ", solution_1)
+
+}
+```
+
+## Plotting the quadratic equation 
+
+Here, we plot the equation $$f(x)=ax^2 + bx+c=0$$ with the given values of a, b, and c to visually confirm the above solutions.
+```{r}
+x <- seq(-5, 5, 0.1)
+plot(x, a*x^2 + b*x + c, type = "l")
+abline(h = 0, lty = 2)
+```
+
